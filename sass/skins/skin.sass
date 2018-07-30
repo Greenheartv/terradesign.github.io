@@ -1,0 +1,101 @@
+@import "../bourbon/core/bourbon"
+
+$color: #93c95c //Theme skin
+$text_color: #888
+$main_color: #222
+$bg_light: #fff
+$bg_dark: #3d3d3d
+
+@mixin kerning($kerning)
+	letter-spacing: $kerning + px
+
+body
+	color: $main_color
+
+a
+	color: $color
+	text-decoration: none
+
+p
+	color: $text_color
+
+.color_element
+	color: $color
+.color_bg
+	background-color: $color
+.color_border
+	border-color: $color
+.main_color_bg
+	background-color: $main_color
+
+.bg_light
+	background-color: $bg_light
+	color: #000
+
+.bg_dark
+	background-color: $bg_dark
+	color: #fff
+	.s_title::after
+		background-color: #fff
+
+.main_head
+	.top_wrapper
+		p
+			+kerning(4)
+		h1
+			+kerning(5)
+
+.section_header
+	h2
+		+kerning(3)
+		&::after
+			background-color: #222
+
+.top_menu
+	li
+		.li_top
+			+kerning(4)
+		.li_menu
+			+kerning(4)
+		.li_top:hover
+			color: $color
+			transition: 0.3s linear
+		.li_top:not(:hover)
+			color: #fff
+			transition: 0.3s linear
+		.li_menu:hover
+			color: $color
+			transition: 0.3s linear
+		.li_menu:not(:hover)
+			color: #000
+			transition: 0.3s linear
+
+.s_descr
+	+kerning(5)
+
+.d_menu
+	background-color: #fff
+
+.contact_box
+	h3
+		+kerning(5)
+	p
+		+kerning(3)
+
+form
+	input:focus,
+	textarea:focus
+		border: 1px solid $color
+	input,
+	textarea
+		+kerning(2)
+	button
+		background-color: $color
+		+kerning(2)
+	.form_group
+		+kerning(2)
+		color: $text-color
+
+.s_cont
+	.s_title::after
+		background-color: #fff
